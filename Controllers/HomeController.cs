@@ -17,4 +17,9 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult ConfigurarJuego()
+    {
+        ViewBag.Categoria = BD.ObtenerCategorias();
+        return View();
+    }
 }
