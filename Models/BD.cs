@@ -56,5 +56,16 @@ static public class BD
         return Lista;
     }
 
+    public static List<Respuesta> ObtenerRespuestas(int idPregunta)
+    {
+        List<Respuesta> Lista = null;
+        string sql = "SELECT * FROM Respuestas WHERE IdPregunta = @pId";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            Lista = db.Query<Respuesta>(sql, new{pId = idPregunta}).ToList();
+        }       
+        return Lista;
+    }
+
 
 }
