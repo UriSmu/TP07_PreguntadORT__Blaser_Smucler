@@ -2,7 +2,7 @@ using System;
 using System.Data.SqlClient;
 using Dapper;
 
-namespace TP6__JJOO__Blaser_Smucler.Models;
+namespace TP07_PreguntadORT__Blaser_Smucler.Models;
 
 static public class BD
 {

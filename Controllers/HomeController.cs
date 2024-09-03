@@ -19,7 +19,10 @@ public class HomeController : Controller
     }
     public IActionResult ConfigurarJuego()
     {
-        //ViewBag.Categoria = BD.ObtenerCategorias();
+        ViewBag.Categoria =  Juego.ObtenerCategorias();
+        ViewBag.Dificultad = Juego.ObtenerDificultades();
         return View();
     }
+
+    
 }
