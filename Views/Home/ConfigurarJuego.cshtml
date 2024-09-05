@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Configurar Juego";
+}
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+<form action='@Url.ActionLink("IngresarJugador", "Home")' method="post">
+    Nombre del Jugador: <input type="text" id="nombreJugador" name="nombreJugador" />
+    <input type="submit" value="Enviar" />
+</form>

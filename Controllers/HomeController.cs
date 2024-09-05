@@ -58,4 +58,52 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult IngresarJugador(string nombreJugador)
+    {
+        if (string.IsNullOrEmpty(nombreJugador))
+        {
+            ViewBag.Error = "Por favor ingrese su nombre.";
+            return View("ConfigurarJuego");
+        }
+
+        TempData["nombreJugador"] = nombreJugador;
+
+        return View("Categorias");
+    }
+
+
+    [HttpPost]
+    public IActionResult SeleccionarCategoria(int idCategoria)
+    {
+        TempData["idCategoria"] = idCategoria;
+
+        return View("Dificultad");
+    }
+
+    [HttpPost]
+    public IActionResult SeleccionarDificultad(int idDificultad)
+    {
+        TempData["idDificultad"] = idDificultad;
+        return RedirectToAction("IniciarJuego");
+    }
+
+    [HttpGet]
+    public IActionResult IniciarJuego()
+    {
+        var nombreJugador = TempData["nombreJugador"]?.ToString();
+        var idCategoria = TempData["idCategoria"];
+        var idDificultad = TempData["idDificultad"];
+
+        if (nombreJugador == null || idCategoria == null || idDificultad == null)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        ViewBag.NombreJugador = nombreJugador;
+        ViewBag.IdCategoria = idCategoria;
+        ViewBag.IdDificultad = idDificultad;
+
+        return View();
+    }
 }

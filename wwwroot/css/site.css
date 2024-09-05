@@ -33,3 +33,66 @@ footer {
 {
   float: left;
 }
+
+.roulette-container {
+  margin: 50px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+#roulette {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#pointer {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid red; /* Cambiar de "border-bottom" a "border-top" */
+  position: absolute;
+  top: -30px; /* Ajustamos la posición si es necesario */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+.boton-ruleta {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.roulette-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajustar para que el canvas ocupe todo el alto de la pantalla */
+}
+
+#canvas {
+  width: 100%; /* Asegúrate de que el canvas se ajuste al tamaño del contenedor */
+  max-width: 500px; /* Establece un tamaño máximo para que no crezca demasiado */
+  height: auto; /* Mantiene la proporción del canvas */
+}
+
+#canvasDificultad {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}

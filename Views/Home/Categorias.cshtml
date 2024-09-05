@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Configurar Juego";
+}
+
+<h2>Selecciona una categoría</h2>
+
+<div class="roulette-container">
+    <div id="roulette">
+        <div id="pointer"></div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <button class="boton-ruleta" id="spinButton">Girar Ruleta</button>
+    <div id="result">Resultado: <span id="selectedCategory"></span></div>
+</div>
+
+<!-- Formulario oculto para enviar el resultado al servidor -->
+<form id="categoryForm" action='@Url.ActionLink("SeleccionarCategoria", "Home")' method="post">
+    <input type="hidden" name="idCategoria" id="idCategoria" value="" />
+</form>
+ <script src="~/js/ruleta.js"></script>
