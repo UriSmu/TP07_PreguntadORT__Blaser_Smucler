@@ -9,9 +9,13 @@ html {
   }
 }
 
-body {
+body header{
+  background-color: white;
   margin: 10px;
   padding: 10px;
+  margin-top: 0%;
+  width: 100%;
+  margin-left: 0%;
 }
 
 
@@ -31,5 +35,68 @@ footer {
 
 .nav-item
 {
+  margin-left: 5%;
+  margin-top: 5%;
   float: left;
+  font-size: larger;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+.nav-item img
+{
+  width: 60%;
+  margin-top: 0%;
+}
+footer
+{
+  margin-top: 0%;
+}
+body {
+  background-color: purple; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centra el contenido verticalmente */
+}
+
+.content-box {
+  margin-top:0% ;
+  background-color: white;
+  padding: 50px; /* Ajusta el padding según tus necesidades */
+  border-radius: 8px; /* Opcional: para bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: para una sombra sutil */
+  text-align: center; /* Centra el contenido dentro del cuadro */
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block;
+  margin-top: 10%;
+}
+
+.button-container {
+  margin-top: 20px; /* Espacio entre la imagen y el botón */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Puedes ajustar el color según tus necesidades */
+  border-color: #007bff;
+}   
+
+.creditos h2
+{
+  border: 0.5px solid black;
+  border-radius: 3px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  background-color: gray;
+}
+.creditos img
+{
+  height: 350px;
 }
