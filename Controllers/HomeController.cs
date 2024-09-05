@@ -19,12 +19,72 @@ public class HomeController : Controller
     }
     public IActionResult ConfigurarJuego()
     {
-<<<<<<< HEAD
-        ViewBag.Categoria = BD.ObtenerCategorias();
-        ViewBag.Dificultad = BD.ObtenerDificultades();
-=======
-        //ViewBag.Categoria = BD.ObtenerCategorias();
->>>>>>> d9f1959da1e3a12891e474e40909ee7ae7d4f9bf
+        ViewBag.Categoria =  Juego.ObtenerCategorias();
+        ViewBag.Dificultad = Juego.ObtenerDificultades();
         return View();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [HttpPost]
+    public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
+    {
+        ViewBag.Categoria =  Juego.ObtenerCategorias();
+        ViewBag.Dificultad = Juego.ObtenerDificultades();
+        return View();
+    }
+
+    
+
+    
 }
