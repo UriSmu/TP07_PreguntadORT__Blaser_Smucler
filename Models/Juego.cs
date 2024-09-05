@@ -84,4 +84,18 @@ static public class Juego
 
         return a;
     }
+
+    static public Respuesta ObtenerCorrecta()
+    {
+        Respuesta correcta = null;
+        foreach (Respuesta answer in ListaRespuestas)
+        {
+            if(answer.Correcta)
+            {
+                correcta = answer;
+            }
+        }
+
+        return correcta;
+    }
 }
