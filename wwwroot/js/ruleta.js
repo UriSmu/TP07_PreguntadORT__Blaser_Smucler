@@ -1,5 +1,3 @@
-var options = ["Historia", "Geografía", "Ciencia", "Entretenimiento", "Deportes", "Arte y Literatura"];
-
     var startAngle = 0;
     var arc = Math.PI / (options.length / 2);
     var spinTimeout = null;

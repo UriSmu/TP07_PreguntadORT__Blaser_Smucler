@@ -59,7 +59,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult IngresarJugador(string nombreJugador)
+    public IActionResult IngresarJugador(string nombreJugador, int idDificultad)
     {
         if (string.IsNullOrEmpty(nombreJugador))
         {
@@ -67,42 +67,46 @@ public class HomeController : Controller
             return View("ConfigurarJuego");
         }
 
-        TempData["nombreJugador"] = nombreJugador;
-
+        // Obtener la dificultad seleccionada por su ID (asegúrate de tener la lista de dificultades cargada)
+        ViewBag.IdDificultad = idDificultad;
+        ViewBag.NombreJugador = nombreJugador;
+        ViewBag.Categorias = Juego.ObtenerCategorias();
+        
         return View("Categorias");
     }
 
 
     [HttpPost]
-    public IActionResult SeleccionarCategoria(int idCategoria)
+    public IActionResult SeleccionarCategoria(int idCategoria, int idDificultad, string nombreJugador)
     {
-        TempData["idCategoria"] = idCategoria;
 
-        return View("Dificultad");
-    }
+        ViewBag.IdDificultad = idDificultad;
+        ViewBag.NombreJugador = nombreJugador;
+        ViewBag.idCategoria = idCategoria;
+        List<Dificultad> dificultades = Juego.ObtenerDificultades();
+        ViewBag.NombreDificultad= dificultades[idDificultad-1].Nombre;
+        List<Categoria> categorias = Juego.ObtenerCategorias();
+        ViewBag.NombreCategoria= categorias[idCategoria-1].Nombre;
 
-    [HttpPost]
-    public IActionResult SeleccionarDificultad(int idDificultad)
-    {
-        TempData["idDificultad"] = idDificultad;
-        return RedirectToAction("IniciarJuego");
+
+        return View("IniciarJuego");
     }
 
     [HttpGet]
     public IActionResult IniciarJuego()
     {
         var nombreJugador = TempData["nombreJugador"]?.ToString();
-        var idCategoria = TempData["idCategoria"];
-        var idDificultad = TempData["idDificultad"];
+        var nombreCategoria = TempData["NombreCategoria"]?.ToString();
+        var nombreDificultad = TempData["NombreDificultad"]?.ToString();
 
-        if (nombreJugador == null || idCategoria == null || idDificultad == null)
+        if (nombreJugador == null || nombreCategoria == null || nombreDificultad == null)
         {
             return RedirectToAction("Index", "Home");
         }
 
         ViewBag.NombreJugador = nombreJugador;
-        ViewBag.IdCategoria = idCategoria;
-        ViewBag.IdDificultad = idDificultad;
+        ViewBag.NombreCategoria = nombreCategoria;
+        ViewBag.NombreDificultad = nombreDificultad;
 
         return View();
     }

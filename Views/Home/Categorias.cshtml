@@ -16,5 +16,13 @@
 <!-- Formulario oculto para enviar el resultado al servidor -->
 <form id="categoryForm" action='@Url.ActionLink("SeleccionarCategoria", "Home")' method="post">
     <input type="hidden" name="idCategoria" id="idCategoria" value="" />
+    <input type="hidden" name="idDificultad" id="idDificultad" value="@ViewBag.IdDificultad" />
+    <input type="hidden" name="nombreJugador" id="nombreJugador" value="@ViewBag.NombreJugador" />
 </form>
- <script src="~/js/ruleta.js"></script>
+<script>
+    // Asegurarse de que ViewBag.Categorias sea un arreglo JSON en formato válido
+    var options = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(
+        ((IEnumerable<dynamic>)ViewBag.Categorias).Select(c => c.Nombre).ToList()
+    ));
+</script>
+<script src="~/js/ruleta.js"></script>

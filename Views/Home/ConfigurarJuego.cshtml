@@ -9,5 +9,12 @@
 
 <form action='@Url.ActionLink("IngresarJugador", "Home")' method="post">
     Nombre del Jugador: <input type="text" id="nombreJugador" name="nombreJugador" />
+    Dificultad: 
+    <select name="Dificultad" class="form-select">
+        @foreach(Dificultad dif in ViewBag.Dificultad)
+        {
+            <option value="@dif.IdDificultad">@dif.Nombre</option>
+        }
+    </select>
     <input type="submit" value="Enviar" />
 </form>
