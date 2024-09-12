@@ -91,23 +91,4 @@ public class HomeController : Controller
 
         return View("IniciarJuego");
     }
-
-    [HttpGet]
-    public IActionResult IniciarJuego()
-    {
-        var nombreJugador = TempData["nombreJugador"]?.ToString();
-        var nombreCategoria = TempData["NombreCategoria"]?.ToString();
-        var nombreDificultad = TempData["NombreDificultad"]?.ToString();
-
-        if (nombreJugador == null || nombreCategoria == null || nombreDificultad == null)
-        {
-            return RedirectToAction("Index", "Home");
-        }
-
-        ViewBag.NombreJugador = nombreJugador;
-        ViewBag.NombreCategoria = nombreCategoria;
-        ViewBag.NombreDificultad = nombreDificultad;
-
-        return View();
-    }
 }
