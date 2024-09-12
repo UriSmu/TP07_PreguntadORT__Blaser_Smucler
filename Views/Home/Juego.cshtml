@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>@ViewBag.Pregunta.Enunciado</h3>
+@if (ViewBag.Pregunta.Foto != null) 
+{
+    <img src=@ViewBag.Pregunta.Foto>
+}
+
+@foreach(Respuesta resp in ViewBag.Respuestas)
+{
+    <form id="categoryForm" action='@Url.ActionLink("Responder", "Home")' method="post">
+        <input type="hidden" name="idRespuesta" id="idRespuesta" value="@resp.IdRespuesta" />
+        <input type="hidden" name="idDificultad" id="idDificultad" value="@ViewBag.Dificultad" />
+        <input type="hidden" name="nombreJugador" id="nombreJugador" value="@ViewBag.NombreJugador" />
+        <input type="submit" value="@resp.Contenido" />
+    </form>
+}

@@ -21,6 +21,11 @@ static public class Juego
         ListaPreguntas = null; 
         ListaRespuestas = null;
     }
+    static private Pregunta TraerPreguntas(int cat, int dif)
+    {
+        Pregunta lista = BD.ObtenerPreguntas(cat, dif);
+        return lista;
+    }
 
     static public List<Categoria> ObtenerCategorias()
     {
@@ -35,12 +40,12 @@ static public class Juego
     static public void CargarPartida(string username, int dificultad, int categoria)
     {
         InicializarJuego(username);
-        ListaPreguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        PreguntaActual = BD.ObtenerPreguntas(dificultad, categoria);
     }
 
-    static public Pregunta ObtenerProximaPregunta()
+    static public Pregunta ObtenerProximaPregunta(int idCategoria, int idDificultad)
     {
-        PreguntaActual = ListaPreguntas[ContadorNroPreguntaActual];
+        PreguntaActual = TraerPreguntas(idCategoria, idDificultad);
         return PreguntaActual;
     }
 
@@ -78,9 +83,6 @@ static public class Juego
                 }
             }
         }
-
-        ContadorNroPreguntaActual++;
-        PreguntaActual = ListaPreguntas[ContadorNroPreguntaActual];
 
         return a;
     }
