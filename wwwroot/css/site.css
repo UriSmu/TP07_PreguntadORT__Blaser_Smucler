@@ -20,7 +20,7 @@ body header{
 
 
 footer {
-  margin-top: 10px;
+  margin-top: 25%;
   padding: 10px;
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
@@ -57,9 +57,9 @@ footer {
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 30px solid red; /* Cambiar de "border-bottom" a "border-top" */
+  border-top: 30px solid red; 
   position: absolute;
-  top: -30px; /* Ajustamos la posición si es necesario */
+  top: -30px; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -87,13 +87,13 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajustar para que el canvas ocupe todo el alto de la pantalla */
+  height: 100vh; 
 }
 
 #canvas {
-  width: 100%; /* Asegúrate de que el canvas se ajuste al tamaño del contenedor */
-  max-width: 500px; /* Establece un tamaño máximo para que no crezca demasiado */
-  height: auto; /* Mantiene la proporción del canvas */
+  width: 100%; 
+  max-width: 500px; 
+  height: auto; 
 }
 
 #canvasDificultad {
@@ -111,10 +111,7 @@ canvas {
   width: 60%;
   margin-top: 0%;
 }
-footer
-{
-  margin-top: 0%;
-}
+
 body {
   background-color: purple; 
 }
@@ -123,31 +120,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Centra el contenido verticalmente */
+  min-height: 100vh; 
 }
 
 .content-box {
   margin-top:0% ;
   background-color: white;
-  padding: 50px; /* Ajusta el padding según tus necesidades */
-  border-radius: 8px; /* Opcional: para bordes redondeados */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: para una sombra sutil */
-  text-align: center; /* Centra el contenido dentro del cuadro */
+  padding: 50px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
 }
 
 .image-container img {
   max-width: 100%;
-  height: auto; /* Mantiene la proporción de la imagen */
+  height: auto; 
   display: block;
   margin-top: 10%;
 }
 
 .button-container {
-  margin-top: 20px; /* Espacio entre la imagen y el botón */
+  margin-top: 20px;
 }
 
 .btn-primary {
-  background-color: #007bff; /* Puedes ajustar el color según tus necesidades */
+  background-color: #007bff; 
   border-color: #007bff;
 }   
 
@@ -159,4 +156,72 @@ body {
 .creditos img
 {
   height: 350px;
+}
+.smuton
+{
+  padding-left: 40%;
+  margin-top: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  background-color: white;
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center;   
+}
+.smuter
+{
+
+  padding-left: 40%;
+  margin-top: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  background-color: white;
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+.smuti
+{
+  padding-left: 38%;
+  margin-top: 1%;
+  background-color: white;
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+  margin-left: 35%;
+  margin-right: 35%;
+}
+.Formulario
+{
+  margin-top:10% ;
+  background-color: white;
+  padding: 50px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+
+.Tutorial
+{
+  padding-left: 40%;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  background-color: white;
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center;  
+}
+.p 
+{
+  font-size: large;
+}
+.Tutorial img
+{
+  width: 20%;
+  border-radius: 10px;
 }
