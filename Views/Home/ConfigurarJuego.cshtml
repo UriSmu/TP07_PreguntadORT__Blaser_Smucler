@@ -7,7 +7,7 @@
     <p style="color:red">@ViewBag.Error</p>
 }
 
-<form action='@Url.ActionLink("IngresarJugador", "Home")' method="post">
+<form class = "Formulario" action='@Url.ActionLink("IngresarJugador", "Home")' method="post">
     Nombre del Jugador: <input type="text" id="nombreJugador" name="nombreJugador" />
     Dificultad: 
     <select name="idDificultad" class="form-select">
@@ -16,5 +16,5 @@
             <option value="@dif.IdDificultad">@dif.Nombre</option>
         }
     </select>
-    <input type="submit" value="Enviar" />
+    <input  type="submit" value="Enviar" />
 </form>
