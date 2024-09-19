@@ -2,14 +2,17 @@
     ViewData["Title"] = "Configurar Juego";
 }
 
-<h2 class = "smuti">¡Bienvenido @ViewBag.NombreJugador!</h2>
-<p class = "smuter">Categoría seleccionada: @ViewBag.NombreCategoria</p>
-<p class = "smuton">Dificultad seleccionada: @ViewBag.NombreDificultad</p>
-<form id="categoryForm" action='@Url.ActionLink("Preguntar", "Home")' method="post">
-    <input type="hidden" name="idCategoria" id="idCategoria" value="@ViewBag.IdCategoria" />
-    <input type="hidden" name="idDificultad" id="idDificultad" value="@ViewBag.IdDificultad" />
-    <input type="hidden" name="nombreJugador" id="nombreJugador" value="@ViewBag.NombreJugador" />
-    <input type="hidden" name="nombreCategoria" id="nombreCategoria" value="@ViewBag.NombreCategoria" />
-    <input type="hidden" name="nombreDificultad" id="nombreDificultad" value="@ViewBag.NombreDificultad" />
-    <input type="submit" value="JUGAR" />
-</form>
+<h2 class="smuti">¡Bienvenido @ViewBag.NombreJugador!</h2>
+<p class="smuter">Categoría seleccionada: @ViewBag.NombreCategoria</p>
+<p class="smuton">Dificultad seleccionada: @ViewBag.NombreDificultad</p>
+
+<div class="formu-container">
+    <form class="Formu" id="categoryForm" action='@Url.ActionLink("Preguntar", "Home")' method="post">
+        <input type="hidden" name="idCategoria" id="idCategoria" value="@ViewBag.IdCategoria" />
+        <input type="hidden" name="idDificultad" id="idDificultad" value="@ViewBag.IdDificultad" />
+        <input type="hidden" name="nombreJugador" id="nombreJugador" value="@ViewBag.NombreJugador" />
+        <input type="hidden" name="nombreCategoria" id="nombreCategoria" value="@ViewBag.NombreCategoria" />
+        <input type="hidden" name="nombreDificultad" id="nombreDificultad" value="@ViewBag.NombreDificultad" />
+        <input type="submit" value="JUGAR" />
+    </form>
+</div>
