@@ -28,7 +28,7 @@ static public class BD
         return Lista;
     }
 
-    public static Pregunta ObtenerPreguntas(int dificultad, int categoria)
+    public static Pregunta ObtenerPreguntas(int categoria, int dificultad)
     {
         Pregunta preg = null;
         string sql = " ";

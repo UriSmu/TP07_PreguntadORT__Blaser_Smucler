@@ -11,7 +11,7 @@
 @foreach(Respuesta resp in ViewBag.Respuestas)
 {
     <form id="categoryForm" action='@Url.ActionLink("Responder", "Home")' method="post">
-        <input type="hidden" name="idRespuesta" id="idRespuesta" value="@resp.IdRespuesta" />
+        <input type="hidden" name="idRespuesta" id="idRespuesta" value="@resp.IdRespuesta" />x
         <input type="hidden" name="idDificultad" id="idDificultad" value="@ViewBag.Dificultad" />
         <input type="hidden" name="nombreJugador" id="nombreJugador" value="@ViewBag.NombreJugador" />
         <input type="submit" value="@resp.Contenido" />
